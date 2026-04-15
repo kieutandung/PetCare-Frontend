@@ -11,6 +11,7 @@ import Navbar from './components/common/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'react-toastify/dist/ReactToastify.css';
+import Homepage from './pages/Homepage';
 
 function App() {
     return (
@@ -19,10 +20,12 @@ function App() {
                 <ToastContainer position="top-right" autoClose={3000} />
                 <Navbar />
                 <Routes>
-                    <Route path="/" element={<Navigate to="/dashboard" />} />
+                    <Route path="/" element={<Homepage />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
-                    <Route path="/oauth2/redirect" element={<OAuth2Redirect />} />  {/* Thêm route mới */}
+                    <Route path="/oauth2/redirect" element={<OAuth2Redirect />} />      
+                    <Route path="/" element={<Homepage />} />
+                    <Route path="/home" element={<Homepage />} />
                     <Route path="/dashboard" element={
                         <PrivateRoute>
                             <Dashboard />
