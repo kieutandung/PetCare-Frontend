@@ -183,19 +183,11 @@ const Navbar = () => {
                                         <div className="py-2">
                                             <Link className="dropdown-item py-2" to="/dashboard" onClick={() => setDropdownOpen(false)}>
                                                 <i className="bi bi-speedometer2 me-2" style={{ color: '#667eea' }}></i>
-                                                Dashboard
-                                            </Link>
-                                            <Link className="dropdown-item py-2" to="/profile" onClick={() => setDropdownOpen(false)}>
-                                                <i className="bi bi-person me-2" style={{ color: '#667eea' }}></i>
                                                 Hồ sơ cá nhân
                                             </Link>
-                                            <Link className="dropdown-item py-2" to="/my-pets" onClick={() => setDropdownOpen(false)}>
-                                                <i className="bi bi-paw me-2" style={{ color: '#667eea' }}></i>
-                                                Thú cưng của tôi
-                                            </Link>
-                                            <Link className="dropdown-item py-2" to="/appointments" onClick={() => setDropdownOpen(false)}>
-                                                <i className="bi bi-calendar me-2" style={{ color: '#667eea' }}></i>
-                                                Lịch hẹn
+                                            <Link className="dropdown-item py-2" to="/my-appointments" onClick={() => setDropdownOpen(false)}>
+                                                <i className="bi bi-calendar-check me-2" style={{ color: '#667eea' }}></i>
+                                                Lịch hẹn của tôi
                                             </Link>
                                             <Link className="dropdown-item py-2" to="/change-password" onClick={() => setDropdownOpen(false)}>
                                                 <i className="bi bi-key me-2" style={{ color: '#667eea' }}></i>
@@ -252,6 +244,11 @@ const Navbar = () => {
                 .nav-link:hover {
                     color: #667eea !important;
                     transform: translateY(-1px);
+                    transition: all 0.2s;
+                }
+                .dropdown-item:hover {
+                    background-color: #f8f9fa;
+                    padding-left: 24px !important;
                     transition: all 0.2s;
                 }
             `}</style>

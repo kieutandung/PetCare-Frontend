@@ -23,7 +23,6 @@ const Homepage = () => {
         { id: 6, icon: '💰', title: 'Giá cả hợp lý', desc: 'Chi phí minh bạch, nhiều ưu đãi hấp dẫn' },
     ];
 
-    // Bác sĩ với áo blouse trắng/xanh chuẩn
     const doctors = [
         { 
             id: 1, 
@@ -75,7 +74,8 @@ const Homepage = () => {
                                 trang thiết bị tiên tiến, mang đến dịch vụ tốt nhất cho thú cưng của bạn.
                             </p>
                             <div className="d-flex gap-3">
-                                <Link to={isAuthenticated ? "/appointments" : "/register"} 
+                                {/* Sửa link thành /booking */}
+                                <Link to={isAuthenticated ? "/booking" : "/register"} 
                                       className="btn btn-light btn-lg px-4 rounded-pill fw-semibold">
                                     Đặt lịch ngay <i className="bi bi-arrow-right ms-2"></i>
                                 </Link>
@@ -174,7 +174,8 @@ const Homepage = () => {
                                         <p className="text-muted" style={{ fontSize: '14px', lineHeight: '1.6' }}>{service.desc}</p>
                                         <div className="d-flex justify-content-between align-items-center mt-3">
                                             <span className="fw-bold text-primary">{service.price}</span>
-                                            <Link to="/appointments" className="btn btn-sm btn-outline-primary rounded-pill">
+                                            {/* Sửa link thành /booking */}
+                                            <Link to={isAuthenticated ? "/booking" : "/register"} className="btn btn-sm btn-outline-primary rounded-pill">
                                                 Đặt lịch
                                             </Link>
                                         </div>
@@ -186,7 +187,7 @@ const Homepage = () => {
                 </div>
             </section>
 
-            {/* Doctors Section - Với áo blouse trắng/xanh */}
+            {/* Doctors Section */}
             <section className="py-5" style={{ background: '#f8f9fa' }}>
                 <div className="container">
                     <div className="text-center mb-5">
@@ -223,9 +224,10 @@ const Homepage = () => {
                                         <p className="text-muted small">
                                             <i className="bi bi-briefcase me-1"></i> Kinh nghiệm: {doctor.exp}
                                         </p>
-                                        <button className="btn btn-sm btn-outline-primary rounded-pill mt-2 px-4">
+                                        {/* Sửa link thành /booking */}
+                                        <Link to={isAuthenticated ? "/booking" : "/register"} className="btn btn-sm btn-outline-primary rounded-pill mt-2 px-4">
                                             Đặt lịch
-                                        </button>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
@@ -317,7 +319,8 @@ const Homepage = () => {
                     <p className="text-white-50 mb-4" style={{ fontSize: '18px' }}>
                         Đặt lịch hẹn ngay hôm nay để nhận ưu đãi 20% cho lần khám đầu tiên
                     </p>
-                    <Link to={isAuthenticated ? "/appointments" : "/register"} 
+                    {/* Sửa link thành /booking */}
+                    <Link to={isAuthenticated ? "/booking" : "/register"} 
                           className="btn btn-light btn-lg px-5 rounded-pill fw-semibold">
                         Đặt lịch ngay <i className="bi bi-arrow-right ms-2"></i>
                     </Link>
